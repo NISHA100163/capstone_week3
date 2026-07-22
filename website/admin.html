@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Secure Retail Store administration dashboard."
+    >
+
+    <title>Admin Dashboard | Secure Retail Store</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portal.css">
+</head>
+
+<body class="portal-page admin-page">
+
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">S</span>
+                <span>Secure Retail Store</span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+
+                    <li>
+                        <a href="admin.html" class="active" aria-current="page">
+                            Admin
+                        </a>
+                    </li>
+
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="admin-hero">
+            <div class="container admin-hero-content">
+
+                <div>
+                    <span class="section-label light-label">
+                        ADMINISTRATION
+                    </span>
+
+                    <h1>Store management dashboard</h1>
+
+                    <p>
+                        Review product information, customer activity,
+                        inventory and recent orders.
+                    </p>
+                </div>
+
+                <div class="admin-status">
+                    <span class="status-dot"></span>
+                    <span>System operational</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="admin-main-section">
+            <div class="container">
+
+                <div class="admin-heading">
+                    <div>
+                        <span class="section-label">DASHBOARD OVERVIEW</span>
+                        <h2>Welcome, Administrator</h2>
+
+                        <p>
+                            Monitor the Secure Retail Store frontend and manage
+                            important retail information.
+                        </p>
+                    </div>
+
+                    <button type="button" class="main-button small-button">
+                        Add Product
+                    </button>
+                </div>
+
+                <div class="stat-grid">
+
+                    <article class="stat-card">
+                        <div class="stat-icon">📦</div>
+
+                        <div>
+                            <span>Total Products</span>
+                            <strong>24</strong>
+                            <small>Available catalogue items</small>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon">🛒</div>
+
+                        <div>
+                            <span>Active Orders</span>
+                            <strong>12</strong>
+                            <small>Orders awaiting completion</small>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon">👥</div>
+
+                        <div>
+                            <span>Customers</span>
+                            <strong>86</strong>
+                            <small>Registered customer accounts</small>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon">⚠️</div>
+
+                        <div>
+                            <span>Low Stock</span>
+                            <strong>3</strong>
+                            <small>Products requiring attention</small>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="admin-content-grid">
+
+                    <section class="dashboard-panel orders-panel">
+
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Recent Orders</h2>
+                                <p>Latest customer order activity.</p>
+                            </div>
+
+                            <a href="#">View all</a>
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Customer</th>
+                                        <th>Product</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>#1001</td>
+                                        <td>Alex Smith</td>
+                                        <td>Performance Laptop</td>
+                                        <td>$1,299</td>
+                                        <td>
+                                            <span class="order-status completed">
+                                                Completed
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>#1002</td>
+                                        <td>Jordan Lee</td>
+                                        <td>Wireless Mouse</td>
+                                        <td>$49</td>
+                                        <td>
+                                            <span class="order-status processing">
+                                                Processing
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>#1003</td>
+                                        <td>Taylor Brown</td>
+                                        <td>Modern Keyboard</td>
+                                        <td>$79</td>
+                                        <td>
+                                            <span class="order-status pending">
+                                                Pending
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </section>
+
+                    <aside class="dashboard-panel quick-actions-panel">
+
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Quick Actions</h2>
+                                <p>Common administration tasks.</p>
+                            </div>
+                        </div>
+
+                        <a href="#" class="quick-action">
+                            <span>＋</span>
+                            <div>
+                                <strong>Add a product</strong>
+                                <small>Create a new catalogue item.</small>
+                            </div>
+                        </a>
+
+                        <a href="#" class="quick-action">
+                            <span>✎</span>
+                            <div>
+                                <strong>Edit products</strong>
+                                <small>Update product information.</small>
+                            </div>
+                        </a>
+
+                        <a href="#" class="quick-action">
+                            <span>▣</span>
+                            <div>
+                                <strong>Review orders</strong>
+                                <small>Check recent customer orders.</small>
+                            </div>
+                        </a>
+
+                        <a href="#" class="quick-action">
+                            <span>⚙</span>
+                            <div>
+                                <strong>Store settings</strong>
+                                <small>Manage website information.</small>
+                            </div>
+                        </a>
+
+                    </aside>
+
+                </div>
+
+                <aside class="admin-security-message">
+                    <span>🔐</span>
+
+                    <div>
+                        <h2>Administrator security</h2>
+
+                        <p>
+                            Administrator pages should be protected with secure
+                            authentication and access controls when backend
+                            development is added.
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+
+            <div>
+                <a href="index.html" class="footer-logo">
+                    Secure Retail Store
+                </a>
+
+                <p>A secure and reliable online retail experience.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="cart.html">Cart</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <p class="copyright">
+                &copy; 2026 Secure Retail Store. All rights reserved.
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+</html>

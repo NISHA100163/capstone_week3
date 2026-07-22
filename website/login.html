@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Log in securely to your Secure Retail Store account."
+    >
+
+    <title>Login | Secure Retail Store</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body class="login-page">
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">S</span>
+                <span>Secure Retail Store</span>
+            </a>
+
+            <nav aria-label="Main navigation">
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="login.html"
+                            class="active"
+                            aria-current="page"
+                        >
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin.html">Admin</a>
+                    </li>
+
+                    <li>
+                        <a href="cart.html">Cart</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="login-main">
+
+        <section class="container login-layout">
+
+            <!-- Login Information -->
+            <div class="login-information">
+
+                <span class="section-label">
+                    SECURE ACCOUNT ACCESS
+                </span>
+
+                <h1>
+                    Welcome back
+                </h1>
+
+                <p class="login-introduction">
+                    Log in to manage your account, review your shopping cart
+                    and access Secure Retail Store customer services.
+                </p>
+
+
+                <div class="login-feature">
+
+                    <div class="feature-icon">✓</div>
+
+                    <div>
+                        <h2>Secure access</h2>
+
+                        <p>
+                            Your account information and password should
+                            always remain private.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="login-feature">
+
+                    <div class="feature-icon">✓</div>
+
+                    <div>
+                        <h2>Manage your shopping</h2>
+
+                        <p>
+                            Review products and access your shopping cart
+                            from one place.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="login-feature">
+
+                    <div class="feature-icon">✓</div>
+
+                    <div>
+                        <h2>Customer support</h2>
+
+                        <p>
+                            Contact our support team whenever account
+                            assistance is required.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <aside class="security-message">
+
+                    <div class="security-icon">🔒</div>
+
+                    <div>
+                        <h2>Security reminder</h2>
+
+                        <p>
+                            Secure Retail Store staff will never ask you to
+                            share your password by email, telephone or message.
+                        </p>
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- Login Form -->
+            <div class="login-card">
+
+                <div class="login-card-heading">
+
+                    <div class="account-icon">👤</div>
+
+                    <span class="form-label">
+                        ACCOUNT LOGIN
+                    </span>
+
+                    <h2>
+                        Sign in to your account
+                    </h2>
+
+                    <p>
+                        Enter your email address and password below.
+                    </p>
+
+                </div>
+
+
+                <form
+                    class="login-form"
+                    action="#"
+                    method="post"
+                >
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email address <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="name@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password <span>*</span>
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label class="remember-option">
+
+                            <input
+                                type="checkbox"
+                                name="remember"
+                            >
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <a href="#" class="forgot-link">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        <span>Sign In</span>
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+
+                    <p class="demo-message">
+                        This login form is a frontend demonstration and is
+                        not currently connected to a database.
+                    </p>
+
+                </form>
+
+
+                <div class="account-support">
+
+                    <p>
+                        Do not have an account?
+                    </p>
+
+                    <a href="contact.html">
+                        Contact customer support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Extra Security Section -->
+        <section class="login-help-section">
+
+            <div class="container login-help-content">
+
+                <div>
+
+                    <span class="section-label light-label">
+                        NEED HELP?
+                    </span>
+
+                    <h2>
+                        Having trouble accessing your account?
+                    </h2>
+
+                    <p>
+                        Contact our support team for assistance with your
+                        account or login details.
+                    </p>
+
+                </div>
+
+                <a href="contact.html" class="support-button">
+                    Contact Support
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-content">
+
+            <div>
+
+                <a href="index.html" class="footer-logo">
+                    Secure Retail Store
+                </a>
+
+                <p>
+                    A secure and reliable online retail experience.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="login.html">Login</a>
+
+                <a href="cart.html">Cart</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <p class="copyright">
+                &copy; 2026 Secure Retail Store. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

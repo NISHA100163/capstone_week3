@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Review products in your Secure Retail Store shopping cart."
+    >
+
+    <title>Shopping Cart | Secure Retail Store</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portal.css">
+</head>
+
+<body class="portal-page cart-page">
+
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">S</span>
+                <span>Secure Retail Store</span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+
+                    <li>
+                        <a href="cart.html" class="active" aria-current="page">
+                            Cart
+                        </a>
+                    </li>
+
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="cart-hero">
+            <div class="container cart-hero-content">
+
+                <div>
+                    <span class="section-label light-label">
+                        YOUR SHOPPING CART
+                    </span>
+
+                    <h1>Review your selected products</h1>
+
+                    <p>
+                        Check product details, update quantities and review
+                        your order summary before continuing.
+                    </p>
+                </div>
+
+                <div class="cart-hero-icon" aria-hidden="true">
+                    🛒
+                </div>
+
+            </div>
+        </section>
+
+        <section class="cart-main-section">
+            <div class="container">
+
+                <div class="cart-page-heading">
+                    <div>
+                        <span class="section-label">CART SUMMARY</span>
+                        <h2>Your cart contains 3 products</h2>
+                    </div>
+
+                    <a href="index.html#products" class="continue-link">
+                        ← Continue shopping
+                    </a>
+                </div>
+
+                <div class="cart-layout">
+
+                    <section class="cart-items">
+
+                        <article class="cart-item">
+
+                            <div class="cart-product-image">💻</div>
+
+                            <div class="cart-product-details">
+                                <span class="product-category">COMPUTERS</span>
+                                <h2>Performance Laptop</h2>
+
+                                <p>
+                                    Reliable laptop for study, productivity
+                                    and everyday use.
+                                </p>
+
+                                <button type="button" class="remove-button">
+                                    Remove
+                                </button>
+                            </div>
+
+                            <div class="quantity-control">
+                                <label for="laptop-quantity">Quantity</label>
+
+                                <input
+                                    type="number"
+                                    id="laptop-quantity"
+                                    name="laptop-quantity"
+                                    value="1"
+                                    min="1"
+                                    max="10"
+                                >
+                            </div>
+
+                            <strong class="cart-price">$1,299</strong>
+
+                        </article>
+
+                        <article class="cart-item">
+
+                            <div class="cart-product-image">🖱️</div>
+
+                            <div class="cart-product-details">
+                                <span class="product-category">ACCESSORIES</span>
+                                <h2>Wireless Mouse</h2>
+
+                                <p>
+                                    Comfortable wireless control with reliable
+                                    everyday performance.
+                                </p>
+
+                                <button type="button" class="remove-button">
+                                    Remove
+                                </button>
+                            </div>
+
+                            <div class="quantity-control">
+                                <label for="mouse-quantity">Quantity</label>
+
+                                <input
+                                    type="number"
+                                    id="mouse-quantity"
+                                    name="mouse-quantity"
+                                    value="1"
+                                    min="1"
+                                    max="10"
+                                >
+                            </div>
+
+                            <strong class="cart-price">$49</strong>
+
+                        </article>
+
+                        <article class="cart-item">
+
+                            <div class="cart-product-image">⌨️</div>
+
+                            <div class="cart-product-details">
+                                <span class="product-category">ACCESSORIES</span>
+                                <h2>Modern Keyboard</h2>
+
+                                <p>
+                                    Comfortable keyboard designed for work,
+                                    study and daily use.
+                                </p>
+
+                                <button type="button" class="remove-button">
+                                    Remove
+                                </button>
+                            </div>
+
+                            <div class="quantity-control">
+                                <label for="keyboard-quantity">Quantity</label>
+
+                                <input
+                                    type="number"
+                                    id="keyboard-quantity"
+                                    name="keyboard-quantity"
+                                    value="1"
+                                    min="1"
+                                    max="10"
+                                >
+                            </div>
+
+                            <strong class="cart-price">$79</strong>
+
+                        </article>
+
+                    </section>
+
+                    <aside class="order-summary">
+
+                        <span class="summary-label">ORDER SUMMARY</span>
+                        <h2>Payment summary</h2>
+
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <strong>$1,427</strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Delivery</span>
+                            <strong>Free</strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Estimated tax</span>
+                            <strong>$142.70</strong>
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <strong>$1,569.70</strong>
+                        </div>
+
+                        <label for="discount-code" class="discount-label">
+                            Discount code
+                        </label>
+
+                        <div class="discount-form">
+                            <input
+                                type="text"
+                                id="discount-code"
+                                placeholder="Enter code"
+                            >
+
+                            <button type="button">Apply</button>
+                        </div>
+
+                        <button type="button" class="main-button checkout-button">
+                            Proceed to Checkout
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                        <div class="secure-checkout">
+                            <span>🔒</span>
+                            <p>Secure checkout demonstration</p>
+                        </div>
+
+                        <p class="form-demo-message">
+                            Checkout functionality will be connected during
+                            backend development.
+                        </p>
+
+                    </aside>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+
+            <div>
+                <a href="index.html" class="footer-logo">
+                    Secure Retail Store
+                </a>
+
+                <p>A secure and reliable online retail experience.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="cart.html">Cart</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <p class="copyright">
+                &copy; 2026 Secure Retail Store. All rights reserved.
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+</html>
