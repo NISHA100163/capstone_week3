@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.product-card {
+    background-color: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px lightgray;
+}
+
+.price {
+    font-weight: bold;
+    color: green;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+h1 {
+    margin-bottom: 15px;
+}
+
+nav a:hover {
+    color: #00ff88;
+}
+
+.hero h2 {
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+.hero {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+}
+
+.hero input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+button {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: green;
+}
+@media (max-width: 768px) {
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 80%;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
