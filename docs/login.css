@@ -559,3 +559,33 @@ body.login-page .copyright {
         flex-wrap: wrap;
     }
 }
+#loginMessage,
+#securityMessage {
+    margin-top: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.login-success {
+    color: #167c35;
+}
+
+.login-error {
+    color: #b42318;
+}
+
+.security-safe {
+    color: #167c35;
+    padding: 10px;
+    background: #ecfdf3;
+    border: 1px solid #75c98c;
+    border-radius: 6px;
+}
+
+.security-warning {
+    color: #9a3412;
+    padding: 10px;
+    background: #fff7ed;
+    border: 1px solid #fdba74;
+    border-radius: 6px;
+}

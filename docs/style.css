@@ -108,3 +108,680 @@ button:hover {
         margin: 10px 0;
     }
 }
+/* =====================================
+   SMART FEATURES
+===================================== */
+
+.smart-features {
+    padding: 60px 20px;
+    background: #f5f7fa;
+}
+
+.features-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.smart-features h2 {
+    margin-bottom: 10px;
+}
+
+.feature-control,
+.voice-search-container {
+    margin-top: 25px;
+}
+
+.feature-control {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-control select,
+.feature-control button,
+.voice-search-row input,
+.voice-search-row button {
+    padding: 11px 14px;
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.feature-control button,
+.voice-search-row button {
+    cursor: pointer;
+}
+
+.voice-search-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.voice-search-row input {
+    width: min(100%, 500px);
+}
+
+#voiceSearchStatus {
+    min-height: 24px;
+    margin-top: 8px;
+}
+
+.demo-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.demo-product {
+    padding: 24px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+.demo-product.hidden-product {
+    display: none;
+}
+
+/* =====================================
+   LIVE CHAT
+===================================== */
+
+.chat-toggle {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 58px;
+    height: 58px;
+    border: none;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+}
+
+.chat-window {
+    position: fixed;
+    right: 24px;
+    bottom: 95px;
+    width: min(360px, calc(100vw - 30px));
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: none;
+    z-index: 1000;
+}
+
+.chat-window.chat-open {
+    display: block;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #1f2937;
+    color: white;
+}
+
+.chat-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header span {
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.chat-header button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.chat-messages {
+    height: 280px;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f7f7f7;
+}
+
+.chat-message {
+    width: fit-content;
+    max-width: 80%;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    line-height: 1.4;
+}
+
+.support-message {
+    background: white;
+}
+
+.user-message {
+    margin-left: auto;
+    background: #dbeafe;
+}
+
+.chat-form {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px 0 0 6px;
+}
+
+.chat-form button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+/* =====================================
+   ACCESSIBILITY MODE
+===================================== */
+
+body.accessibility-mode {
+    background: #000;
+    color: #fff;
+}
+
+body.accessibility-mode header,
+body.accessibility-mode nav,
+body.accessibility-mode section,
+body.accessibility-mode article,
+body.accessibility-mode footer,
+body.accessibility-mode .chat-window {
+    background: #000;
+    color: #fff;
+}
+
+body.accessibility-mode a {
+    color: #ffff00;
+    text-decoration: underline;
+}
+
+body.accessibility-mode button,
+body.accessibility-mode input,
+body.accessibility-mode select {
+    background: #000;
+    color: #fff;
+    border: 2px solid #ffff00;
+}
+
+body.accessibility-mode .demo-product,
+body.accessibility-mode .chat-message {
+    background: #111;
+    border: 1px solid #fff;
+}
+
+body.large-text {
+    font-size: 120%;
+}
+
+/* Keyboard focus visibility */
+button:focus,
+input:focus,
+select:focus,
+a:focus {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .demo-products {
+        grid-template-columns: 1fr;
+    }
+
+    .voice-search-row {
+        flex-direction: column;
+    }
+
+    .voice-search-row input {
+        width: 100%;
+    }
+
+    .chat-toggle {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chat-window {
+        right: 15px;
+        bottom: 85px;
+    }
+}
+/* =====================================
+   SMART FEATURES
+===================================== */
+
+.smart-features {
+    padding: 60px 20px;
+    background: #f5f7fa;
+}
+
+.features-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.smart-features h2 {
+    margin-bottom: 10px;
+}
+
+.feature-control,
+.voice-search-container {
+    margin-top: 25px;
+}
+
+.feature-control {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-control select,
+.feature-control button,
+.voice-search-row input,
+.voice-search-row button {
+    padding: 11px 14px;
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.feature-control button,
+.voice-search-row button {
+    cursor: pointer;
+}
+
+.voice-search-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.voice-search-row input {
+    width: min(100%, 500px);
+}
+
+#voiceSearchStatus {
+    min-height: 24px;
+    margin-top: 8px;
+}
+
+.demo-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.demo-product {
+    padding: 24px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+.demo-product.hidden-product {
+    display: none;
+}
+
+/* =====================================
+   LIVE CHAT
+===================================== */
+
+.chat-toggle {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 58px;
+    height: 58px;
+    border: none;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+}
+
+.chat-window {
+    position: fixed;
+    right: 24px;
+    bottom: 95px;
+    width: min(360px, calc(100vw - 30px));
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: none;
+    z-index: 1000;
+}
+
+.chat-window.chat-open {
+    display: block;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #1f2937;
+    color: white;
+}
+
+.chat-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header span {
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.chat-header button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.chat-messages {
+    height: 280px;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f7f7f7;
+}
+
+.chat-message {
+    width: fit-content;
+    max-width: 80%;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    line-height: 1.4;
+}
+
+.support-message {
+    background: white;
+}
+
+.user-message {
+    margin-left: auto;
+    background: #dbeafe;
+}
+
+.chat-form {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px 0 0 6px;
+}
+
+.chat-form button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+/* =====================================
+   ACCESSIBILITY MODE
+===================================== */
+
+body.accessibility-mode {
+    background: #000;
+    color: #fff;
+}
+
+body.accessibility-mode header,
+body.accessibility-mode nav,
+body.accessibility-mode section,
+body.accessibility-mode article,
+body.accessibility-mode footer,
+body.accessibility-mode .chat-window {
+    background: #000;
+    color: #fff;
+}
+
+body.accessibility-mode a {
+    color: #ffff00;
+    text-decoration: underline;
+}
+
+body.accessibility-mode button,
+body.accessibility-mode input,
+body.accessibility-mode select {
+    background: #000;
+    color: #fff;
+    border: 2px solid #ffff00;
+}
+
+body.accessibility-mode .demo-product,
+body.accessibility-mode .chat-message {
+    background: #111;
+    border: 1px solid #fff;
+}
+
+body.large-text {
+    font-size: 120%;
+}
+
+/* Keyboard focus visibility */
+button:focus,
+input:focus,
+select:focus,
+a:focus {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .demo-products {
+        grid-template-columns: 1fr;
+    }
+
+    .voice-search-row {
+        flex-direction: column;
+    }
+
+    .voice-search-row input {
+        width: 100%;
+    }
+
+    .chat-toggle {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chat-window {
+        right: 15px;
+        bottom: 85px;
+    }
+}
+/* ===== ORGANIZED PRODUCTS SECTION ===== */
+
+.store-products {
+    padding: 70px 5%;
+    background: #f4f7fa;
+}
+
+.products-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.products-heading span {
+    color: #078c83;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.products-heading h2 {
+    margin: 12px 0;
+    color: #06254b;
+    font-size: 36px;
+}
+
+.products-heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.products-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.store-product-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #dce4ec;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(6, 37, 75, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(6, 37, 75, 0.15);
+}
+
+.product-image {
+    height: 240px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e7f5f4;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-information {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-category {
+    color: #078c83;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.product-information h3 {
+    margin: 12px 0;
+    color: #06254b;
+    font-size: 23px;
+}
+
+.product-information p {
+    margin: 0 0 25px;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.product-bottom {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #e2e8f0;
+}
+
+.product-bottom strong {
+    color: #06254b;
+    font-size: 24px;
+}
+
+.product-bottom button {
+    padding: 11px 17px;
+    color: #ffffff;
+    background: #078c83;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.product-bottom button:hover {
+    background: #06254b;
+}
+
+/* Tablet */
+@media (max-width: 950px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+    .store-products {
+        padding: 50px 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-heading h2 {
+        font-size: 28px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+}

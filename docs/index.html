@@ -18,6 +18,203 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="home.css">
+
+    <style>
+        /* Product details modal */
+        .product-link {
+            border: 0;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .product-link:hover,
+        .product-link:focus-visible {
+            color: #078c83;
+            text-decoration: underline;
+        }
+
+        .product-modal[hidden] {
+            display: none;
+        }
+
+        .product-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        .product-modal-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(4, 21, 43, 0.72);
+        }
+
+        .product-modal-dialog {
+            position: relative;
+            z-index: 1;
+            width: min(900px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-modal-visual {
+            min-height: 430px;
+            display: grid;
+            place-items: center;
+            background: #dff4f2;
+            font-size: clamp(90px, 14vw, 150px);
+        }
+
+        .product-modal-content {
+            padding: 48px;
+        }
+
+        .product-modal-category {
+            color: #078c83;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product-modal-content h2 {
+            margin: 12px 0 18px;
+            color: #06254b;
+            font-size: clamp(30px, 4vw, 42px);
+        }
+
+        .product-modal-description {
+            margin: 0 0 24px;
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .product-modal-price {
+            margin-bottom: 28px;
+            color: #06254b;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .product-modal-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .product-modal-actions a,
+        .product-modal-actions button {
+            padding: 13px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-cart-button {
+            color: #ffffff;
+            background: #078c83;
+            border: 2px solid #078c83;
+        }
+
+        .modal-cart-button:hover {
+            background: #06254b;
+            border-color: #06254b;
+        }
+
+        .modal-close-button {
+            color: #06254b;
+            background: #ffffff;
+            border: 2px solid #06254b;
+        }
+
+        .modal-close-icon {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            color: #06254b;
+            background: #ffffff;
+            border: 1px solid #dce4ec;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 760px) {
+            .product-modal-dialog {
+                grid-template-columns: 1fr;
+            }
+
+            .product-modal-visual {
+                min-height: 240px;
+            }
+
+            .product-modal-content {
+                padding: 34px 26px;
+            }
+        }
+    .product-visual {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.product-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 240px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+.product-visual {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.product-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 240px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.product-modal-visual {
+    padding: 30px;
+}
+
+.product-modal-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 14px;
+}
+</style>
 </head>
 
 <body class="home-page">
@@ -307,6 +504,7 @@
         </section>
 
 
+
         <!-- Products -->
         <section class="products-section" id="products">
 
@@ -339,8 +537,8 @@
                     <article class="product-card">
 
                         <div class="product-visual laptop-visual">
-                            💻
-                        </div>
+    <img src="images/laptop.jpg" alt="Performance Laptop">
+</div>
 
                         <div class="product-content">
 
@@ -359,9 +557,13 @@
 
                                 <strong>$1,299</strong>
 
-                                <a href="laptop.html">
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="laptop"
+                                >
                                     View Product
-                                </a>
+                                </button>
 
                             </div>
 
@@ -372,30 +574,78 @@
 
                     <article class="product-card">
 
-                        <div class="product-visual mouse-visual">
-                            🖱️
-                        </div>
+                        <div class="product-visual monitor-visual">
+    <img
+        src="images/monitor.jpg"
+        alt="Full HD Monitor"
+    >
+</div>
 
                         <div class="product-content">
 
                             <span class="product-category">
-                                ACCESSORIES
+                                DISPLAYS
                             </span>
 
-                            <h3>Wireless Mouse</h3>
+                            <h3>Full HD Monitor</h3>
 
                             <p>
-                                Comfortable wireless control with smooth
-                                and reliable performance.
+                                A clear Full HD display for work,
+                                entertainment and study.
                             </p>
 
                             <div class="product-bottom">
 
-                                <strong>$49</strong>
+                                <strong>$299</strong>
 
-                                <a href="mouse.html">
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="monitor"
+                                >
                                     View Product
-                                </a>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-visual printer-visual">
+    <img
+        src="images/printer.jpg"
+        alt="Wireless Printer"
+    >
+</div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                OFFICE
+                            </span>
+
+                            <h3>Wireless Printer</h3>
+
+                            <p>
+                                A convenient wireless printer for documents,
+                                reports and photos.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <strong>$199</strong>
+
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="printer"
+                                >
+                                    View Product
+                                </button>
 
                             </div>
 
@@ -407,8 +657,11 @@
                     <article class="product-card">
 
                         <div class="product-visual keyboard-visual">
-                            ⌨️
-                        </div>
+    <img
+        src="images/keyboard.jpg"
+        alt="Modern Keyboard"
+    >
+</div>
 
                         <div class="product-content">
 
@@ -427,9 +680,218 @@
 
                                 <strong>$79</strong>
 
-                                <a href="keyboard.html">
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="keyboard"
+                                >
                                     View Product
-                                </a>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-visual mouse-visual">
+    <img
+        src="images/mouse.jpg"
+        alt="Wireless Mouse"
+    >
+</div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                ACCESSORIES
+                            </span>
+
+                            <h3>Wireless Mouse</h3>
+
+                            <p>
+                                Comfortable wireless control with smooth
+                                and reliable performance.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <strong>$49</strong>
+
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="mouse"
+                                >
+                                    View Product
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-visual headphones-visual">
+    <img
+        src="images/headphones.jpg"
+        alt="Wireless Headphones"
+    >
+</div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                AUDIO
+                            </span>
+
+                            <h3>Wireless Headphones</h3>
+
+                            <p>
+                                Comfortable headphones with clear sound
+                                and wireless connectivity.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <strong>$129</strong>
+
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="headphones"
+                                >
+                                    View Product
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-visual webcam-visual">
+    <img
+        src="images/webcam.jpg"
+        alt="HD Webcam"
+    >
+</div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                ACCESSORIES
+                            </span>
+
+                            <h3>HD Webcam</h3>
+
+                            <p>
+                                A high-quality webcam for online meetings,
+                                classes and video calls.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <strong>$69</strong>
+
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="webcam"
+                                >
+                                    View Product
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-visual ssd-visual">
+    <img
+        src="images/ssd.jpg"
+        alt="External SSD"
+    >
+</div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                STORAGE
+                            </span>
+
+                            <h3>External SSD</h3>
+
+                            <p>
+                                Fast and portable storage for securely
+                                keeping important files.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <strong>$149</strong>
+
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="ssd"
+                                >
+                                    View Product
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="product-card">
+
+                        <div class="product-visual stand-visual">
+    <img
+        src="images/laptop-stand.jpg"
+        alt="Adjustable Laptop Stand"
+    >
+</div>
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                ACCESSORIES
+                            </span>
+
+                            <h3>Adjustable Laptop Stand</h3>
+
+                            <p>
+                                An adjustable stand that improves comfort
+                                and workspace organisation.
+                            </p>
+
+                            <div class="product-bottom">
+
+                                <strong>$59</strong>
+
+                                <button
+                                    class="product-link"
+                                    type="button"
+                                    data-product="stand"
+                                >
+                                    View Product
+                                </button>
 
                             </div>
 
@@ -440,6 +902,94 @@
                 </div>
 
             </div>
+
+        </section>
+
+
+        <!-- Product Details Modal -->
+        <section
+            id="productModal"
+            class="product-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalProductName"
+            hidden
+        >
+
+            <div
+                class="product-modal-overlay"
+                data-close-modal
+            ></div>
+
+            <article class="product-modal-dialog">
+
+                <button
+                    id="modalCloseIcon"
+                    class="modal-close-icon"
+                    type="button"
+                    aria-label="Close product details"
+                >
+                    ×
+                </button>
+
+                <div
+                    id="modalProductVisual"
+                    class="product-modal-visual"
+                    aria-hidden="true"
+                >
+                    💻
+                </div>
+
+                <div class="product-modal-content">
+
+                    <span
+                        id="modalProductCategory"
+                        class="product-modal-category"
+                    >
+                        Computers
+                    </span>
+
+                    <h2 id="modalProductName">
+                        Performance Laptop
+                    </h2>
+
+                    <p
+                        id="modalProductDescription"
+                        class="product-modal-description"
+                    >
+                        A reliable laptop designed for study,
+                        productivity and daily tasks.
+                    </p>
+
+                    <div
+                        id="modalProductPrice"
+                        class="product-modal-price"
+                    >
+                        $1,299
+                    </div>
+
+                    <div class="product-modal-actions">
+
+                        <a
+                            href="cart.html"
+                            class="modal-cart-button"
+                        >
+                            Add to Cart
+                        </a>
+
+                        <button
+                            id="modalCloseButton"
+                            class="modal-close-button"
+                            type="button"
+                        >
+                            Continue Shopping
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
 
         </section>
 
@@ -742,6 +1292,320 @@
 
     </footer>
 
+<!-- ===== SMART FEATURES SECTION ===== -->
+<section class="smart-features" id="smart-features">
+    <div class="features-container">
+        <h2>Smart Shopping Features</h2>
+        <p>Explore our secure, accessible and customer-friendly tools.</p>
+
+        <!-- Language selector -->
+        <div class="feature-control">
+            <label for="languageSelect" data-translate="languageLabel">
+                Select Language:
+            </label>
+
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="ne">नेपाली</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+
+        <!-- Accessibility controls -->
+        <div class="feature-control">
+            <button id="accessibilityButton" type="button">
+                ♿ Accessibility Mode
+            </button>
+
+            <button id="increaseTextButton" type="button">
+                A+ Increase Text
+            </button>
+
+            <button id="resetAccessibilityButton" type="button">
+                Reset
+            </button>
+        </div>
+
+        <!-- Voice search -->
+        <div class="voice-search-container">
+            <label for="productSearch" data-translate="searchLabel">
+                Search Products:
+            </label>
+
+            <div class="voice-search-row">
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="Search for a product"
+                    autocomplete="off"
+                >
+
+                <button id="voiceSearchButton" type="button">
+                    🎤 Voice Search
+                </button>
+            </div>
+
+            <p id="voiceSearchStatus" aria-live="polite"></p>
+        </div>
+
+
+        <!-- Product demonstration -->
+        <div class="demo-products" id="productList">
+            <article class="demo-product" data-product="laptop computer">
+                <h3 data-translate="laptop">Laptop</h3>
+                <p>$1,299</p>
+            </article>
+
+            <article class="demo-product" data-product="monitor display">
+                <h3>Full HD Monitor</h3>
+                <p>$299</p>
+            </article>
+
+            <article class="demo-product" data-product="printer office">
+                <h3>Wireless Printer</h3>
+                <p>$199</p>
+            </article>
+
+            <article class="demo-product" data-product="keyboard accessories">
+                <h3>Modern Keyboard</h3>
+                <p>$79</p>
+            </article>
+
+            <article class="demo-product" data-product="mouse accessories">
+                <h3>Wireless Mouse</h3>
+                <p>$49</p>
+            </article>
+
+            <article class="demo-product" data-product="headphones audio">
+                <h3 data-translate="headphones">Wireless Headphones</h3>
+                <p>$129</p>
+            </article>
+
+            <article class="demo-product" data-product="webcam camera video">
+                <h3>HD Webcam</h3>
+                <p>$69</p>
+            </article>
+
+            <article class="demo-product" data-product="external ssd storage">
+                <h3>External SSD</h3>
+                <p>$149</p>
+            </article>
+
+            <article class="demo-product" data-product="laptop stand accessories">
+                <h3>Adjustable Laptop Stand</h3>
+                <p>$59</p>
+            </article>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== LIVE CHAT ===== -->
+<button
+    id="chatToggleButton"
+    class="chat-toggle"
+    type="button"
+    aria-label="Open live chat"
+>
+    💬
+</button>
+
+<section
+    id="chatWindow"
+    class="chat-window"
+    aria-label="Customer support chat"
+>
+    <header class="chat-header">
+        <div>
+            <strong data-translate="chatTitle">Live Support</strong>
+            <span data-translate="onlineStatus">Online</span>
+        </div>
+
+        <button
+            id="closeChatButton"
+            type="button"
+            aria-label="Close live chat"
+        >
+            ×
+        </button>
+    </header>
+
+    <div id="chatMessages" class="chat-messages" aria-live="polite">
+        <div class="chat-message support-message">
+            <span data-translate="welcomeMessage">
+                Hello! How can we help you today?
+            </span>
+        </div>
+    </div>
+
+    <form id="chatForm" class="chat-form">
+        <input
+            id="chatInput"
+            type="text"
+            placeholder="Type your message"
+            maxlength="250"
+            required
+        >
+
+        <button type="submit" data-translate="sendButton">
+            Send
+        </button>
+    </form>
+</section>
+
+
+<script>
+    const productInformation = {
+    laptop: {
+        name: "Performance Laptop",
+        category: "Computers",
+        price: "$1,299",
+        image: "images/laptop.jpg",
+        description:
+            "A reliable laptop designed for study, productivity and daily tasks."
+    },
+
+    monitor: {
+        name: "Full HD Monitor",
+        category: "Displays",
+        price: "$299",
+        image: "images/monitor.jpg",
+        description:
+            "A clear Full HD display suitable for work, entertainment and study."
+    },
+
+    printer: {
+        name: "Wireless Printer",
+        category: "Office",
+        price: "$199",
+        image: "images/printer.jpg",
+        description:
+            "A convenient wireless printer for documents, reports and photos."
+    },
+
+    keyboard: {
+        name: "Modern Keyboard",
+        category: "Accessories",
+        price: "$79",
+        image: "images/keyboard.jpg",
+        description:
+            "A comfortable keyboard created for work, study and everyday use."
+    },
+
+    mouse: {
+        name: "Wireless Mouse",
+        category: "Accessories",
+        price: "$49",
+        image: "images/mouse.jpg",
+        description:
+            "Comfortable wireless control with smooth and reliable performance."
+    },
+
+    headphones: {
+        name: "Wireless Headphones",
+        category: "Audio",
+        price: "$129",
+        image: "images/headphones.jpg",
+        description:
+            "Comfortable wireless headphones with clear sound and wireless connectivity."
+    },
+
+    webcam: {
+        name: "HD Webcam",
+        category: "Accessories",
+        price: "$69",
+        image: "images/webcam.jpg",
+        description:
+            "A high-quality webcam for online meetings, classes and video calls."
+    },
+
+    ssd: {
+        name: "External SSD",
+        category: "Storage",
+        price: "$149",
+        image: "images/ssd.jpg",
+        description:
+            "Fast and portable storage for securely keeping important files."
+    },
+
+    stand: {
+        name: "Adjustable Laptop Stand",
+        category: "Accessories",
+        price: "$59",
+        image: "images/laptop-stand.jpg",
+        description:
+            "An adjustable stand designed to improve comfort and workspace organisation."
+    }
+};
+
+    const productModal = document.getElementById("productModal");
+    const modalProductVisual = document.getElementById("modalProductVisual");
+    const modalProductCategory = document.getElementById("modalProductCategory");
+    const modalProductName = document.getElementById("modalProductName");
+    const modalProductDescription = document.getElementById("modalProductDescription");
+    const modalProductPrice = document.getElementById("modalProductPrice");
+    const modalCloseButton = document.getElementById("modalCloseButton");
+    const modalCloseIcon = document.getElementById("modalCloseIcon");
+
+    let lastFocusedElement = null;
+
+    function openProductModal(productKey) {
+        const product = productInformation[productKey];
+
+        if (!product) {
+            return;
+        }
+
+        lastFocusedElement = document.activeElement;
+
+        modalProductVisual.innerHTML = `
+    <img
+        src="${product.image}"
+        alt="${product.name}"
+    >
+`;
+        modalProductCategory.textContent = product.category;
+        modalProductName.textContent = product.name;
+        modalProductDescription.textContent = product.description;
+        modalProductPrice.textContent = product.price;
+
+        productModal.hidden = false;
+        document.body.classList.add("modal-open");
+        modalCloseIcon.focus();
+    }
+
+    function closeProductModal() {
+        productModal.hidden = true;
+        document.body.classList.remove("modal-open");
+
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+    }
+
+    document.querySelectorAll(".product-link").forEach((button) => {
+        button.addEventListener("click", () => {
+            openProductModal(button.dataset.product);
+        });
+    });
+
+    modalCloseButton.addEventListener("click", closeProductModal);
+    modalCloseIcon.addEventListener("click", closeProductModal);
+
+    productModal.addEventListener("click", (event) => {
+        if (event.target.hasAttribute("data-close-modal")) {
+            closeProductModal();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !productModal.hidden) {
+            closeProductModal();
+        }
+    });
+</script>
+
+<script src="smart-features.js"></script>
 </body>
 
 </html>
