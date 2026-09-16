@@ -76,10 +76,57 @@ The following table identifies where important project data originates and who i
 
 ## 4. Data Flow Diagram
 
-To be completed.
+
+
+## 4. Data Flow Diagram
+
+The following diagram shows how data moves through the Secure Retail System between the administrator, customer, application and database.
+
+```mermaid
+flowchart TD
+
+    A[Admin] -->|Enter or update product data| B[Product Management Form]
+    B --> C[Data Validation]
+
+    C -->|Valid data| D[(Database)]
+    C -->|Invalid data| E[Validation Error]
+    E --> B
+
+    D --> F[Backend / API]
+    F --> G[Product Catalogue]
+
+    G --> H[Customer]
+
+    H -->|Search or filter products| G
+    G --> F
+    F --> D
+
+    H -->|Add product and quantity| I[Shopping Cart]
+    I --> F
+
+    H -->|Enter login details| J[Login Form]
+    J --> K[Authentication]
+    K --> D
+
+    H -->|Submit enquiry| L[Contact Form]
+    L --> M[Form Validation]
+    M --> D
+```
+
+### Data Flow Explanation
+
+1. The administrator enters or updates product information through the Product Management Form.
+2. The system validates the entered information before storing it.
+3. Valid product data is stored in the database.
+4. The Backend/API retrieves product information from the database.
+5. The Product Catalogue displays product information to customers.
+6. Customers can search and filter products.
+7. Customers can add products and quantities to the shopping cart.
+8. Customers enter login details through the Login Form, which are processed by the authentication system.
+9. Customers can submit enquiries through the Contact Form.
+10. Form data is validated before being processed or stored.
 
 ---
-
 ## 5. Important Business Information
 
 To be completed.
