@@ -186,7 +186,51 @@ The Secure Retail System depends on accurate and valid product, customer and tra
 
 ## 7. Data Requirements for Future Development
 
-To be completed.
+## 7. Data Requirements for Future Development
+
+The information identified during Week 2 will guide future database, backend, API and reporting development for the Secure Retail System.
+
+The Product Catalogue and related system features will require structured and validated data so that information can be stored, retrieved and updated reliably.
+
+### Future Data Requirements
+
+| Requirement | Description |
+|---|---|
+| Unique Product ID | Each product must have a unique identifier |
+| Unique SKU | Each product should have a unique stock/product code |
+| Product Information | Product name, brand, category, description and image must be stored |
+| Price Data | Product prices must be stored as valid numeric values |
+| Stock Data | Stock quantity must be stored and updated accurately |
+| Product Status | The system should identify whether a product is active, inactive or out of stock |
+| Customer Account Data | Customer name, email and secure password information will be required |
+| Cart Data | Selected products, quantity and price information will be required |
+| Contact Data | Customer enquiries should include name, email and message |
+| Created Date | The system should record when important records are created |
+| Updated Date | The system should record when important records are changed |
+| Validation Rules | Required fields, data types and input formats must be validated |
+| Secure Password Storage | Passwords must be stored securely using password hashing |
+| Database Relationships | Product, customer, cart and other related data should be linked using appropriate identifiers |
+| API Support | The backend/API should be able to retrieve and update required system data |
+| Reporting Support | Stored data should support future reports and dashboards |
+
+### Preparation for Database Design
+
+The data identified in this analysis can later be organised into database tables such as:
+
+- Products
+- Categories
+- Customers
+- Cart
+- Cart Items
+- Contact Enquiries
+
+Relationships between these tables will be designed during future database development.
+
+### Week 2 Conclusion
+
+Week 2 focused on understanding the information required by the Secure Retail System. The team identified important product, customer and system data, documented data sources and responsibilities, created a Project Data Inventory, developed a Data Flow Diagram and identified data quality and integrity risks.
+
+This analysis provides a foundation for future database design, API development, reporting and backend implementation.
 
 ---
 
