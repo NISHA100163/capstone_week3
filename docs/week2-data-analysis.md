@@ -129,6 +129,34 @@ flowchart TD
 ---
 ## 5. Important Business Information
 
+## 5. Important Business Information
+
+The Secure Retail System requires important business information to support daily operations, customer service and future reporting. The Product Catalogue and related system features should provide accurate and useful information to both customers and administrators.
+
+| Business Information | Why It Is Important |
+|---|---|
+| Total Number of Products | Helps administrators understand the size of the catalogue |
+| Products by Category | Supports product organisation and filtering |
+| Product Prices | Allows customers to view current selling prices |
+| Stock Quantity | Helps monitor available inventory |
+| Out-of-Stock Products | Helps administrators identify products that need restocking |
+| Low-Stock Products | Supports inventory planning and stock control |
+| Active / Inactive Products | Helps control which products are visible to customers |
+| Product Search Results | Helps customers quickly find relevant products |
+| Cart Information | Shows selected products, quantities and prices |
+| Customer Account Information | Supports login and account management |
+| Contact Enquiries | Allows administrators to respond to customer questions |
+| Recently Added Products | Helps track new products added to the system |
+| Recently Updated Products | Helps track changes made to catalogue information |
+
+### Business Information Summary
+
+This information can later be used to support reports, dashboards and management decisions. Accurate product, stock and customer information will help the Secure Retail System operate effectively and provide useful information to both customers and administrators.
+
+---
+
+## 6. Data Quality and Integrity Risks
+
 To be completed.
 
 ---
