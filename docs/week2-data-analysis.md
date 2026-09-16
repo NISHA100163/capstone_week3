@@ -157,6 +157,35 @@ This information can later be used to support reports, dashboards and management
 
 ## 6. Data Quality and Integrity Risks
 
+## 6. Data Quality and Integrity Risks
+
+Poor-quality, missing or invalid data can reduce the reliability of the Secure Retail System. The following risks were identified for the Product Catalogue and related system features.
+
+| Data Risk | Example | Potential Impact | Suggested Control |
+|---|---|---|---|
+| Missing Product Name | A product is saved without a name | Customers cannot identify the product | Make product name mandatory |
+| Invalid Price | A negative price or text is entered | Incorrect pricing and transaction errors | Accept only valid numeric values greater than or equal to 0 |
+| Duplicate SKU | Two products use the same SKU | Inventory records may become confused | Require SKU to be unique |
+| Negative Stock Quantity | Stock is entered as -5 | Incorrect availability information | Allow only zero or positive whole numbers |
+| Missing Category | Product has no category | Search and filtering become inaccurate | Require a valid category |
+| Incorrect Product Information | Wrong description, brand or price is entered | Customers receive misleading information | Allow authorised users to review and update records |
+| Outdated Product Data | Old prices or stock values remain in the system | Customers see incorrect information | Record update dates and regularly review product data |
+| Missing Product Image | Product has no image | Poor catalogue presentation | Use a placeholder image where necessary |
+| Invalid Customer Email | Incorrect email format is entered | Login or contact communication may fail | Validate email format |
+| Weak Password Handling | Password is stored insecurely | Security and privacy risk | Store passwords securely using hashing |
+| Invalid Cart Quantity | Customer enters zero or negative quantity | Incorrect cart calculations | Require quantity to be at least 1 |
+| Duplicate Product Records | Same product is created more than once | Catalogue becomes inconsistent | Check product ID and SKU uniqueness |
+| Missing Contact Information | Customer submits an incomplete enquiry | Admin may be unable to respond | Make required contact fields mandatory |
+| Invalid Data Type | Text is entered into a numeric field | System errors or incorrect calculations | Apply field-level data type validation |
+
+### Data Risk Analysis Summary
+
+The Secure Retail System depends on accurate and valid product, customer and transaction data. Validation rules, mandatory fields, unique identifiers, secure password handling and regular data updates can reduce the risk of incorrect or unreliable information. These controls will also support future database integrity and system security.
+
+---
+
+## 7. Data Requirements for Future Development
+
 To be completed.
 
 ---
