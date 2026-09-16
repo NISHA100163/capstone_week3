@@ -50,8 +50,28 @@ The following inventory identifies the main data required by the Secure Retail S
 
 ## 3. Data Sources and Responsibilities
 
-To be completed.
+The following table identifies where important project data originates and who is responsible for creating, updating and using that data within the Secure Retail System.
 
+| Data | Source | Created/Entered By | Updated By | Used By |
+|---|---|---|---|---|
+| Product Information | Product Management Form | Admin | Admin | Customer, Admin |
+| Product ID | System | System | System | Catalogue, Admin, Cart |
+| Product Name | Product Management Form | Admin | Admin | Customer, Admin |
+| SKU | Product Management Form | Admin | Admin | Admin, System |
+| Category | Product Management Form | Admin | Admin | Customer, Catalogue |
+| Price | Product Management Form | Admin | Admin | Customer, Cart |
+| Stock Quantity | Inventory / Product Management | Admin | Admin / System | Catalogue, Admin |
+| Product Status | Product / Inventory Data | Admin / System | Admin / System | Customer, Admin |
+| Search Keyword | Search Bar | Customer | Customer | Search Function |
+| Category Filter | Product Catalogue | Customer | Customer | Filter Function |
+| Cart Quantity | Shopping Cart | Customer | Customer | Cart, System |
+| Customer Email | Registration / Login Form | Customer | Customer | Authentication, Account |
+| Password | Registration Form | Customer | Customer | Authentication System |
+| Contact Name | Contact Form | Customer | Customer | Admin / Support |
+| Contact Email | Contact Form | Customer | Customer | Admin / Support |
+| Contact Message | Contact Form | Customer | Customer | Admin / Support |
+| Created Date | System | System | System | Admin, System |
+| Updated Date | System | System | System | Admin, System |
 ---
 
 ## 4. Data Flow Diagram
