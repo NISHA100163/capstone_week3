@@ -1,5 +1,7 @@
 # Week 4 – Product Catalogue Data Dictionary
 
+
+
 ## Product Entity
 
 | Attribute | Data Type | Key | Description |
@@ -8,11 +10,12 @@
 | brand_id | Integer | FK | Links the product to a brand |
 | category_id | Integer | FK | Links the product to a category |
 | product_name | Varchar |  | Stores the product name |
-| sku | Varchar |  | Stores the unique product reference |
+| sku | Varchar | Unique | Unique stock keeping unit for the product |
 | price | Decimal |  | Stores the selling price |
 | description | Text |  | Stores detailed product information |
 | image_url | Varchar |  | Stores the product image location |
-| availability_status | Varchar |  | Shows whether the product is available |
+| created_date | Date |  | Records when the product was added |
+| updated_date | Date |  | Records when the product was last updated |
 
 ## Brand Entity
 
@@ -46,6 +49,8 @@
 | store_name | Varchar |  | Stores the store name |
 | location | Varchar |  | Stores the store location |
 
+
+
 ## Inventory Entity
 
 | Attribute | Data Type | Key | Description |
@@ -54,3 +59,4 @@
 | product_id | Integer | FK | Links inventory to a product |
 | store_id | Integer | FK | Links inventory to a store |
 | stock_quantity | Integer |  | Stores available stock quantity |
+| availability_status | Varchar |  | Shows product availability at the selected store |
