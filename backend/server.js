@@ -134,6 +134,40 @@ app.put("/api/products/:id/stock", (req, res) => {
   );
 });
 
+ // Manish's Sprint 3 contribution: Low stock inventory report
+app.get("/api/products/low-stock", (req, res) => {
+  const limit = req.query.limit === undefined
+    ? 20
+    : Number(req.query.limit);
+
+  if (!Number.isSafeInteger(limit) || limit < 0) {
+    return res.status(400).json({
+      error: "Stock limit must be a non-negative integer"
+    });
+  }
+
+  const sql = `
+    SELECT product_id, product_name, price, stock_quantity
+    FROM products
+    WHERE stock_quantity <= ?
+    ORDER BY stock_quantity ASC, product_id ASC
+  `;
+
+  db.all(sql, [limit], (err, rows) => {
+    if (err) {
+      return res.status(500).json({
+        error: "Unable to retrieve low-stock products"
+      });
+    }
+
+    res.json({
+      stock_limit: limit,
+      total_products: rows.length,
+      products: rows
+    });
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
