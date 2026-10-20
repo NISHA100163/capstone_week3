@@ -8,6 +8,50 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+
+function validateProductInput(product) {
+  const errors = [];
+
+  if (
+    typeof product.product_name !== "string" ||
+    product.product_name.trim().length === 0
+  ) {
+    errors.push("Product name is required");
+  }
+
+  if (
+    typeof product.price !== "number" ||
+    !Number.isFinite(product.price) ||
+    product.price < 0
+  ) {
+    errors.push("Price must be a valid non-negative number");
+  }
+
+  if (
+    !Number.isSafeInteger(product.stock_quantity) ||
+    product.stock_quantity < 0
+  ) {
+    errors.push("Stock quantity must be a non-negative integer");
+  }
+
+  if (
+    !Number.isSafeInteger(product.category_id) ||
+    product.category_id <= 0
+  ) {
+    errors.push("Valid category ID is required");
+  }
+
+  if (
+    !Number.isSafeInteger(product.supplier_id) ||
+    product.supplier_id <= 0
+  ) {
+    errors.push("Valid supplier ID is required");
+  }
+
+  return errors;
+}
+
+
 // Connect to SQLite database
 const db = new sqlite3.Database(
   path.join(__dirname, "database.db"),
@@ -47,23 +91,17 @@ app.post("/api/products", (req, res) => {
     supplier_id
   } = req.body;
 
-  if (
-    typeof product_name !== "string" ||
-    !product_name.trim() ||
-    typeof price !== "number" ||
-    !Number.isFinite(price) ||
-    price < 0 ||
-    !Number.isSafeInteger(stock_quantity) ||
-    stock_quantity < 0 ||
-    !Number.isSafeInteger(category_id) ||
-    category_id <= 0 ||
-    !Number.isSafeInteger(supplier_id) ||
-    supplier_id <= 0
-  ) {
+  
+  const validationErrors = validateProductInput(req.body);
+
+  if (validationErrors.length > 0) {
     return res.status(400).json({
-      error: "Invalid product information"
+      success: false,
+      message: "Product validation failed",
+      errors: validationErrors
     });
   }
+
 
   const sql = `
     INSERT INTO products
