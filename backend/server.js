@@ -206,6 +206,44 @@ app.get("/api/products/low-stock", (req, res) => {
   });
 });
 
+
+ // Sprint 3 – Product Search API
+// Search products by name or description
+
+app.get("/api/products/search", (req, res) => {
+  const query = req.query.q;
+
+  if (typeof query !== "string" || !query.trim()) {
+    return res.status(400).json({
+      error: "Please provide a valid search keyword"
+    });
+  }
+
+  const sql = `
+    SELECT product_id, product_name, description,
+           price, stock_quantity, category_id
+    FROM products
+    WHERE product_name LIKE ? OR description LIKE ?
+    ORDER BY product_name ASC
+  `;
+
+  const keyword = `%${query.trim()}%`;
+
+  db.all(sql, [keyword, keyword], (err, rows) => {
+    if (err) {
+      return res.status(500).json({
+        error: "Unable to search products"
+      });
+    }
+
+    res.json({
+      search_keyword: query.trim(),
+      total_results: rows.length,
+      products: rows
+    });
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
